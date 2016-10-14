@@ -1,0 +1,14 @@
+1 getGoalsFromGame     
+http://localhost:49808/odata/Goal?$expand=GamePlayer/Game&$filter=GamePlayer/GameId%20eq%20{GameId}
+
+2 getTeamsByGameId
+http://localhost:49808/odata/GameTeam?$filter=GameId%20eq%20{GameId}
+
+3 getGamePlayersByGameTeam
+http://localhost:49808/odata/GamePlayer?$expand=Player&$filter=Player/TeamId eq 1
+
+3 postGoal
+{
+	"GamePlayerId":2, "IsOwnGoal":false, "GoalTime":"PT12H34M"
+}
+
