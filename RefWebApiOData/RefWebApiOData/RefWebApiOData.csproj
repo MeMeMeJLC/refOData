@@ -309,6 +309,18 @@
     <Compile Include="Migrations\201610141528464_addedsquadnum1.Designer.cs">
       <DependentUpon>201610141528464_addedsquadnum1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610150209255_addCollectinToPenaltyTypesAndPlayer.cs" />
+    <Compile Include="Migrations\201610150209255_addCollectinToPenaltyTypesAndPlayer.Designer.cs">
+      <DependentUpon>201610150209255_addCollectinToPenaltyTypesAndPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610150231124_penaltytypefix.cs" />
+    <Compile Include="Migrations\201610150231124_penaltytypefix.Designer.cs">
+      <DependentUpon>201610150231124_penaltytypefix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610150236119_fixpenalty.cs" />
+    <Compile Include="Migrations\201610150236119_fixpenalty.Designer.cs">
+      <DependentUpon>201610150236119_fixpenalty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GamePlayer.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -436,6 +448,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610141528464_addedsquadnum1.resx">
       <DependentUpon>201610141528464_addedsquadnum1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610150209255_addCollectinToPenaltyTypesAndPlayer.resx">
+      <DependentUpon>201610150209255_addCollectinToPenaltyTypesAndPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610150231124_penaltytypefix.resx">
+      <DependentUpon>201610150231124_penaltytypefix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610150236119_fixpenalty.resx">
+      <DependentUpon>201610150236119_fixpenalty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

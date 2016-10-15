@@ -135,3 +135,6 @@ D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrat
 D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrations.gameplayerchange.resources
 D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrations.addedsquadnum.resources
 D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrations.addedsquadnum1.resources
+D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrations.addCollectinToPenaltyTypesAndPlayer.resources
+D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrations.penaltytypefix.resources
+D:\VS2015 projects\RefWebApiOData\RefWebApiOData\obj\Debug\RefWebApiOData.Migrations.fixpenalty.resources

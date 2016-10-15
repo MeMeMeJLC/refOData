@@ -12,3 +12,23 @@ http://localhost:49808/odata/GamePlayer?$expand=Player&$filter=Player/TeamId eq 
 	"GamePlayerId":2, "IsOwnGoal":false, "GoalTime":"PT12H34M"
 }
 
+3 goalSaved = postGoalResponse
+
+4 getTeamsByGameId
+http://localhost:49808/odata/GameTeam?$filter=GameId%20eq%20{GameId}
+
+4 getGamePlayersByGameTeam
+http://localhost:49808/odata/GamePlayer?$expand=Player&$filter=Player/TeamId eq 1
+
+4 postSubstitution     http://localhost:49808/odata/Substitution
+{
+  "GamePlayerGoingOffTheFieldId": 2,
+  "GamePlayerGoingOnTheFieldId": 3,
+  "SubstitutionTime": "PT8M8S"
+}
+
+5 getTeamsByGameId
+http://localhost:49808/odata/GameTeam?$filter=GameId%20eq%20{GameId}
+
+5 getGamePlayersByGameTeamWithPenalties
+http://localhost:49808/odata/Penalty?$expand=GamePlayer,GamePlayer/Player&$filter=GamePlayer/Player/TeamId eq 1

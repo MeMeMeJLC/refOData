@@ -13,5 +13,6 @@ namespace RefWebApiOData.Models
         public int TeamId { get; set; }
 
         public Team Team { get; set; }
+        public virtual ICollection<GamePlayer> GamePlayers { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace RefWebApiOData.Models
         public int PenaltyTypeId { get; set; }
         public TimeSpan PenaltyTime { get; set; }
 
-        public ICollection<GamePlayer> GamePlayers { get; set; }
-        public ICollection<PenaltyType> PenaltyTypes { get; set; }
+        public GamePlayer GamePlayer { get; set; }
+        public PenaltyType PenaltyType { get; set; }
     }
 }

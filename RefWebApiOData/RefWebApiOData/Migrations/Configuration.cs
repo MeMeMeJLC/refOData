@@ -86,7 +86,7 @@ namespace RefWebApiOData.Migrations
                 );
 
             context.Goals.AddOrUpdate(
-                p => p.GamePlayerId,
+                p => p.GoalTime,
                 new Goal { GamePlayerId = 2, GoalTime = new TimeSpan(0, 25, 24) },
                 new Goal { GamePlayerId = 3, GoalTime = new TimeSpan(0, 45, 24) },
                 new Goal { GamePlayerId = 6, GoalTime = new TimeSpan(0, 55, 24) }
@@ -102,12 +102,12 @@ namespace RefWebApiOData.Migrations
 
             context.Penalties.AddOrUpdate(
                 p => p.GamePlayerId,
-                new Penalty { GamePlayerId = 1, PenaltyTypeId = 1, PenaltyTime = new TimeSpan(0, 25, 42) },
+                new Penalty { GamePlayerId = 4, PenaltyTypeId = 1, PenaltyTime = new TimeSpan(0, 25, 42) },
                 new Penalty { GamePlayerId = 3, PenaltyTypeId = 2, PenaltyTime = new TimeSpan(0, 44, 10) }
                 );
 
             context.Substitutions.AddOrUpdate(
-                p => p.GamePlayerGoingOffTheFieldId,
+                p => p.SubstitutionTime,
                 new Substitution { GamePlayerGoingOffTheFieldId = 2, GamePlayerGoingOnTheFieldId = 3, SubstitutionTime = new TimeSpan(0, 38, 28) },
                 new Substitution { GamePlayerGoingOffTheFieldId = 3, GamePlayerGoingOnTheFieldId = 4, SubstitutionTime = new TimeSpan(0, 55, 58) }
                 ); 

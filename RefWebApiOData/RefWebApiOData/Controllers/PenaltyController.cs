@@ -149,19 +149,7 @@ namespace RefWebApiOData.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // GET: odata/Penalty(5)/GamePlayers
-        [EnableQuery]
-        public IQueryable<GamePlayer> GetGamePlayers([FromODataUri] int key)
-        {
-            return db.Penalties.Where(m => m.Id == key).SelectMany(m => m.GamePlayers);
-        }
 
-        // GET: odata/Penalty(5)/PenaltyTypes
-        [EnableQuery]
-        public IQueryable<PenaltyType> GetPenaltyTypes([FromODataUri] int key)
-        {
-            return db.Penalties.Where(m => m.Id == key).SelectMany(m => m.PenaltyTypes);
-        }
 
         protected override void Dispose(bool disposing)
         {
