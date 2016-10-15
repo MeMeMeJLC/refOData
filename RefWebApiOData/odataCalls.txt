@@ -1,6 +1,12 @@
 1 getGoalsFromGame     
 http://localhost:49808/odata/Goal?$expand=GamePlayer/Game&$filter=GamePlayer/GameId%20eq%20{GameId}
 
+1 getSubstituionsFromGame     
+http://localhost:49808/odata/Substitution?$expand=GamePlayerGoingOffTheField/Game&$filter=GamePlayerGoingOffTheField/GameId%20eq%201
+
+1 getPenaltiesFromGame
+http://localhost:49808/odata/Penalty?$expand=GamePlayer/Game&$filter=GamePlayer/GameId%20eq%201
+
 2 getTeamsByGameId
 http://localhost:49808/odata/GameTeam?$filter=GameId%20eq%20{GameId}
 
