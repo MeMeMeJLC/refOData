@@ -30,6 +30,7 @@ namespace RefWebApiOData.Controllers
     {
         private RefWebApiODataContext db = new RefWebApiODataContext();
 
+        [Authorize]
         // GET: odata/Goal
         [EnableQuery]
         public IQueryable<Goal> GetGoal()
@@ -37,6 +38,7 @@ namespace RefWebApiOData.Controllers
             return db.Goals;
         }
 
+        [Authorize]
         // GET: odata/Goal(5)
         [EnableQuery]
         public SingleResult<Goal> GetGoal([FromODataUri] int key)
@@ -44,6 +46,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.Goals.Where(goal => goal.Id == key));
         }
 
+        [Authorize]
         // PUT: odata/Goal(5)
         public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<Goal> patch)
         {
@@ -81,6 +84,7 @@ namespace RefWebApiOData.Controllers
             return Updated(goal);
         }
 
+        [Authorize]
         // POST: odata/Goal
         public async Task<IHttpActionResult> Post(Goal goal)
         {
@@ -95,6 +99,7 @@ namespace RefWebApiOData.Controllers
             return Created(goal);
         }
 
+        [Authorize]
         // PATCH: odata/Goal(5)
         [AcceptVerbs("PATCH", "MERGE")]
         public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<Goal> patch)
@@ -133,6 +138,7 @@ namespace RefWebApiOData.Controllers
             return Updated(goal);
         }
 
+        [Authorize]
         // DELETE: odata/Goal(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] int key)
         {
@@ -148,6 +154,7 @@ namespace RefWebApiOData.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [Authorize]
         // GET: odata/Goal(5)/GamePlayer
         [EnableQuery]
         public SingleResult<GamePlayer> GetGamePlayer([FromODataUri] int key)

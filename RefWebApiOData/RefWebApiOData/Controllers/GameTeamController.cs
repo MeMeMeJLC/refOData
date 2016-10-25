@@ -31,6 +31,7 @@ namespace RefWebApiOData.Controllers
     {
         private RefWebApiODataContext db = new RefWebApiODataContext();
 
+        [Authorize]
         // GET: odata/GameTeam
         [EnableQuery]
         public IQueryable<GameTeam> GetGameTeam()
@@ -38,6 +39,7 @@ namespace RefWebApiOData.Controllers
             return db.GameTeams;
         }
 
+        [Authorize]
         // GET: odata/GameTeam(5)
         [EnableQuery]
         public SingleResult<GameTeam> GetGameTeam([FromODataUri] int key)
@@ -45,6 +47,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.GameTeams.Where(gameTeam => gameTeam.Id == key));
         }
 
+        [Authorize]
         // PUT: odata/GameTeam(5)
         public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<GameTeam> patch)
         {
@@ -82,6 +85,7 @@ namespace RefWebApiOData.Controllers
             return Updated(gameTeam);
         }
 
+        [Authorize]
         // POST: odata/GameTeam
         public async Task<IHttpActionResult> Post(GameTeam gameTeam)
         {
@@ -96,6 +100,7 @@ namespace RefWebApiOData.Controllers
             return Created(gameTeam);
         }
 
+        [Authorize]
         // PATCH: odata/GameTeam(5)
         [AcceptVerbs("PATCH", "MERGE")]
         public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<GameTeam> patch)
@@ -134,6 +139,7 @@ namespace RefWebApiOData.Controllers
             return Updated(gameTeam);
         }
 
+        [Authorize]
         // DELETE: odata/GameTeam(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] int key)
         {
@@ -149,6 +155,7 @@ namespace RefWebApiOData.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [Authorize]
         // GET: odata/GameTeam(5)/Game
         [EnableQuery]
         public SingleResult<Game> GetGame([FromODataUri] int key)
@@ -156,6 +163,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.GameTeams.Where(m => m.Id == key).Select(m => m.Game));
         }
 
+        [Authorize]
         // GET: odata/GameTeam(5)/Team
         [EnableQuery]
         public SingleResult<Team> GetTeam([FromODataUri] int key)

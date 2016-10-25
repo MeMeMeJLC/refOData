@@ -31,6 +31,7 @@ namespace RefWebApiOData.Controllers
     {
         private RefWebApiODataContext db = new RefWebApiODataContext();
 
+        [Authorize]
         // GET: odata/Penalty
         [EnableQuery]
         public IQueryable<Penalty> GetPenalty()
@@ -38,6 +39,7 @@ namespace RefWebApiOData.Controllers
             return db.Penalties;
         }
 
+        [Authorize]
         // GET: odata/Penalty(5)
         [EnableQuery]
         public SingleResult<Penalty> GetPenalty([FromODataUri] int key)
@@ -45,6 +47,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.Penalties.Where(penalty => penalty.Id == key));
         }
 
+        [Authorize]
         // PUT: odata/Penalty(5)
         public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<Penalty> patch)
         {
@@ -82,6 +85,7 @@ namespace RefWebApiOData.Controllers
             return Updated(penalty);
         }
 
+        [Authorize]
         // POST: odata/Penalty
         public async Task<IHttpActionResult> Post(Penalty penalty)
         {
@@ -96,6 +100,7 @@ namespace RefWebApiOData.Controllers
             return Created(penalty);
         }
 
+        [Authorize]
         // PATCH: odata/Penalty(5)
         [AcceptVerbs("PATCH", "MERGE")]
         public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<Penalty> patch)
@@ -134,6 +139,7 @@ namespace RefWebApiOData.Controllers
             return Updated(penalty);
         }
 
+        [Authorize]
         // DELETE: odata/Penalty(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] int key)
         {

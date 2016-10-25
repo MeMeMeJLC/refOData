@@ -30,6 +30,7 @@ namespace RefWebApiOData.Controllers
     {
         private RefWebApiODataContext db = new RefWebApiODataContext();
 
+        [Authorize]
         // GET: odata/Substitution
         [EnableQuery]
         public IQueryable<Substitution> GetSubstitution()
@@ -37,6 +38,7 @@ namespace RefWebApiOData.Controllers
             return db.Substitutions;
         }
 
+        [Authorize]
         // GET: odata/Substitution(5)
         [EnableQuery]
         public SingleResult<Substitution> GetSubstitution([FromODataUri] int key)
@@ -44,6 +46,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.Substitutions.Where(substitution => substitution.Id == key));
         }
 
+        [Authorize]
         // PUT: odata/Substitution(5)
         public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<Substitution> patch)
         {
@@ -81,6 +84,7 @@ namespace RefWebApiOData.Controllers
             return Updated(substitution);
         }
 
+        [Authorize]
         // POST: odata/Substitution
         public async Task<IHttpActionResult> Post(Substitution substitution)
         {
@@ -95,6 +99,7 @@ namespace RefWebApiOData.Controllers
             return Created(substitution);
         }
 
+        [Authorize]
         // PATCH: odata/Substitution(5)
         [AcceptVerbs("PATCH", "MERGE")]
         public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<Substitution> patch)
@@ -133,6 +138,7 @@ namespace RefWebApiOData.Controllers
             return Updated(substitution);
         }
 
+        [Authorize]
         // DELETE: odata/Substitution(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] int key)
         {
@@ -148,6 +154,7 @@ namespace RefWebApiOData.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [Authorize]
         // GET: odata/Substitution(5)/GamePlayerGoingOffTheField
         [EnableQuery]
         public SingleResult<GamePlayer> GetGamePlayerGoingOffTheField([FromODataUri] int key)
@@ -155,6 +162,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.Substitutions.Where(m => m.Id == key).Select(m => m.GamePlayerGoingOffTheField));
         }
 
+        [Authorize]
         // GET: odata/Substitution(5)/GamePlayerGoingOnTheField
         [EnableQuery]
         public SingleResult<GamePlayer> GetGamePlayerGoingOnTheField([FromODataUri] int key)

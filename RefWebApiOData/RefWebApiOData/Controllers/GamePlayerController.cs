@@ -31,6 +31,7 @@ namespace RefWebApiOData.Controllers
     {
         private RefWebApiODataContext db = new RefWebApiODataContext();
 
+        [Authorize]
         // GET: odata/GamePlayer
         [EnableQuery]
         public IQueryable<GamePlayer> GetGamePlayer()
@@ -38,6 +39,7 @@ namespace RefWebApiOData.Controllers
             return db.GamePlayers;
         }
 
+        [Authorize]
         // GET: odata/GamePlayer(5)
         [EnableQuery]
         public SingleResult<GamePlayer> GetGamePlayer([FromODataUri] int key)
@@ -45,6 +47,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.GamePlayers.Where(gamePlayer => gamePlayer.Id == key));
         }
 
+        [Authorize]
         // PUT: odata/GamePlayer(5)
         public async Task<IHttpActionResult> Put([FromODataUri] int key, Delta<GamePlayer> patch)
         {
@@ -82,6 +85,7 @@ namespace RefWebApiOData.Controllers
             return Updated(gamePlayer);
         }
 
+        [Authorize]
         // POST: odata/GamePlayer
         public async Task<IHttpActionResult> Post(GamePlayer gamePlayer)
         {
@@ -96,6 +100,7 @@ namespace RefWebApiOData.Controllers
             return Created(gamePlayer);
         }
 
+        [Authorize]
         // PATCH: odata/GamePlayer(5)
         [AcceptVerbs("PATCH", "MERGE")]
         public async Task<IHttpActionResult> Patch([FromODataUri] int key, Delta<GamePlayer> patch)
@@ -134,6 +139,7 @@ namespace RefWebApiOData.Controllers
             return Updated(gamePlayer);
         }
 
+        [Authorize]
         // DELETE: odata/GamePlayer(5)
         public async Task<IHttpActionResult> Delete([FromODataUri] int key)
         {
@@ -149,6 +155,7 @@ namespace RefWebApiOData.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [Authorize]
         // GET: odata/GamePlayer(5)/Game
         [EnableQuery]
         public SingleResult<Game> GetGame([FromODataUri] int key)
@@ -156,6 +163,7 @@ namespace RefWebApiOData.Controllers
             return SingleResult.Create(db.GamePlayers.Where(m => m.Id == key).Select(m => m.Game));
         }
 
+        [Authorize]
         // GET: odata/GamePlayer(5)/Player
         [EnableQuery]
         public SingleResult<Player> GetPlayer([FromODataUri] int key)
